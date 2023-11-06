@@ -1,0 +1,79 @@
+// Place all the styles related to the setumei controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body{
+    height: 8000px;
+}
+.a{
+    width: 100%;
+}
+.b{
+    height: 63vh;
+}
+.c{
+    height: 63vh;
+}
+.d{
+    height: 26vh;
+}
+.main-box{
+    display: flex;
+}
+.container{
+    margin-left: 90px;
+    margin-top: 100px;
+}
+.container-a{
+    margin-left: 59px;
+    margin-top: 100px;
+}
+.container-b{
+    margin-left: 67px;
+    margin-top: 100px;
+}
+.container-c{
+    margin-left: 67px;
+    margin-top: 3px;
+    line-height: 4px;
+    font-size: 12px;
+}
+.container-d{
+    margin-left: 67px;
+    margin-top: 30px;
+}
+.line {
+    margin-left: 67px;
+    margin-top: 100px;
+    width: 0.7px;
+    height: 370px;
+    background-color: #000;
+}
+.main-box2{
+    display: flex;
+}
+.container2{
+    margin-left: 90px;
+    margin-top: 3px;
+    line-height: 4px;
+    font-size: 12px;
+}
+.container-a2{
+    margin-left: 59px;
+    margin-top: 3px;
+    line-height: 4px;
+    font-size: 12px;
+} 
+.container-a3{
+    margin-left: 134px;
+    margin-top: 3px;
+    line-height: 4px;
+    font-size: 12px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+}
+

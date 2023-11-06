@@ -1,0 +1,70 @@
+<h1>機能性表示食品紹介</h1>
+<h3>一覧ページ</h3>
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<%= link_to "トップページへ", root_path %>
+<%= link_to "新規投稿へ", new_kinou_path %>
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+
+<h3>投稿を検索</h3>
+ <%= form_tag({controller:"kinous",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+<% end %>
+
+<%= form_tag({controller:"kinous",action:"index"}, method: :get) do %>
+  <% Tag.all.each do |t| %>
+      <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+  <% end %>
+  <%= submit_tag '検索' %>
+<% end %>
+
+<%= form_tag({controller:"kinous",action:"index"}, method: :get) do %>
+  <%= text_field_tag :tag %>
+  <%= submit_tag 'タグを追加' %>
+<% end %>
+
+<div class="kinous-container">
+  <% @kinous.each do |t| %>
+    <div class="kinou">
+      <%= t.user.name %>
+      <%= t.name %>
+      <%= t.genre %>
+      <%= t.about %>
+      <%= t.age %>
+      <%= t.sex %>
+      <%= t.weight %>
+      <%= t.height %>
+      <%= t.frequency %>
+      <%= t.period %>
+      <%= image_tag t.image_url, size: "300x250" if t.image? %>
+      <%= link_to "詳細へ", kinou_path(t.id) %>
+    </div>
+
+
+    <% t.tags.each do |tag| %>
+      <%= tag.name %>
+    <% end %> 
+
+    <% if user_signed_in? %>
+    <% if current_user.already_liked?(t) %>
+        <%= button_to kinou_like_path(id: t.id, kinou_id: t.id), method: :delete do %>
+          <i class="fas fa-heart"></i><%= t.likes.count %>
+        <% end %>
+    <% else %>
+        <%= button_to kinou_likes_path(id: t.id, kinou_id: t.id), method: :post do %>
+          <i class="fas fa-heart"></i><%= t.likes.count %>
+        <% end %>
+    <% end %>
+<% else %>
+     <i class="fas fa-heart"></i><%= t.likes.count %>
+<% end %>
+
+<% if user_signed_in? && current_user.id == t.user_id %>
+    <%= link_to "編集する", edit_kinou_path(t.id) %>
+    <%= button_to "削除する", kinou_path(t.id), method: :delete %>
+<% end %>
+</div>
+<% end %>
+</div>

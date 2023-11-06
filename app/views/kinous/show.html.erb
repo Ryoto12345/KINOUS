@@ -1,0 +1,62 @@
+<h1>機能性表示食品紹介</h1>
+<h3>商品詳細</h3>
+<div class="kinou">
+  <p><%= @kinou.name %></p>
+  <p><%= @kinou.genre %></p>
+  <p><%= @kinou.about %></p>
+  <p><%= @kinou.age %></p>
+  <p><%= @kinou.sex %></p>
+  <p><%= @kinou.weight %></p>
+  <p><%= @kinou.height %></p>
+  <p><%= @kinou.frequency %></p>
+  <p><%= @kinou.period %></p>
+  <p><%= image_tag @kinou.image_url, size: "300x250" if @kinou.image? %></p>
+</div>
+
+<% @kinou.tags.each do |tag| %>
+  <span><%= tag.name %></span>
+<% end %>
+
+<% if user_signed_in? %>
+      <% if current_user.already_liked?(@kinou) %>
+        <%= button_to kinou_like_path(@kinou), method: :delete do %>
+          <i class="fas fa-heart"></i><%= @kinou.likes.count %>
+        <% end %>
+      <% else %>
+        <%= button_to kinou_likes_path(@kinou), method: :post do %>
+          <i class="far fa-heart"></i><%= @kinou.likes.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+    <i class="far fa-heart"></i><%= @kinou.likes.count %>
+    <% end %>
+  <%= link_to "編集する", edit_kinou_path(@kinou.id) %>
+</div>
+
+<h2>いいねしたユーザー</h2>
+<% @kinou.liked_users.each do |user| %>
+  <li><%= user.name %></li>
+<% end %>
+
+<div class="comment-wrapper">
+<h2>コメント一覧</h2>
+  <% @comments.each do |c| %>
+    <div>
+      <%= c.user.name unless c.user.blank? %>
+      <br>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@kinou, @comment], local: true) do |f| %>
+      <%= f.text_area :content %>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "一覧に戻る", kinous_path %>
