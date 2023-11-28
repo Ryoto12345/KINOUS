@@ -1,62 +1,98 @@
 <h1>機能性表示食品紹介</h1>
-<h3>商品詳細</h3>
+<div class="box">
+  <h2>投稿詳細ページ</h2>
+</div>
+<p><hr class="sty"><br>
 <div class="kinou">
-  <p><%= @kinou.name %></p>
-  <p><%= @kinou.genre %></p>
-  <p><%= @kinou.about %></p>
-  <p><%= @kinou.age %></p>
-  <p><%= @kinou.sex %></p>
-  <p><%= @kinou.weight %></p>
-  <p><%= @kinou.height %></p>
-  <p><%= @kinou.frequency %></p>
-  <p><%= @kinou.period %></p>
-  <p><%= image_tag @kinou.image_url, size: "300x250" if @kinou.image? %></p>
+  <div class="mainboxxx">
+    <div class="mainboxx">
+      <div class="boxx">
+        <br>
+        <h4><span class="p_underline4">　商品情報　</h4>
+        <p><span class="p_u">商品名：</span><%= @kinou.name %></p>
+        <p><span class="p_u">機能性成分名：</span><%= @kinou.genre %></p>
+        <p><%= image_tag @kinou.image_url, size: "300x250" if @kinou.image? %></p>
+        <% @kinou.tags.each do |tag| %>
+          <p><span class="p_u">健康効果タグ：</span><%= tag.name %><br>
+        <% end %>
+      </div>
+      <div class="boxxx">
+        <br>
+        <br>
+        <h4><span class="p_underline4">　投稿者情報　</h4>
+        <p><span class="p_u">投稿者名：</span><%= @kinou.user.name %><br>
+        <p><span class="p_u">年齢：</span><%= @kinou.age %>歳</p>
+        <p><span class="p_u">性別：</span><%= @kinou.sex %></p>
+        <p><span class="p_u">体重：</span><%= @kinou.weight %>kg</p>
+        <p><span class="p_u">身長：</span><%= @kinou.height %>cm</p>
+        <p><span class="p_u">商品の摂取頻度：</span><%= @kinou.frequency %></p>
+        <p><span class="p_u">商品の摂取期間：</span><%= @kinou.period %></p>
+      </div>
+    </div>
+  </div>
+  <div class="main2">
+    <div class="mainboxx2">
+      <br>
+      <p><span class="p_u">商品の説明：</span><%= @kinou.about %></p>
+      <br>
+    </div>
+  </div>
+  
 </div>
 
-<% @kinou.tags.each do |tag| %>
-  <span><%= tag.name %></span>
-<% end %>
 
-<% if user_signed_in? %>
-      <% if current_user.already_liked?(@kinou) %>
-        <%= button_to kinou_like_path(@kinou), method: :delete do %>
-          <i class="fas fa-heart"></i><%= @kinou.likes.count %>
+<div class="mainboxx3">
+  <% if user_signed_in? %>
+        <% if current_user.already_liked?(@kinou) %>
+          <%= button_to kinou_like_path(@kinou), method: :delete do %>
+            <i class="fas fa-heart"></i><%= @kinou.likes.count %>
+          <% end %>
+        <% else %>
+          <%= button_to kinou_likes_path(@kinou), method: :post do %>
+            <i class="far fa-heart"></i><%= @kinou.likes.count %>
+          <% end %>
         <% end %>
       <% else %>
-        <%= button_to kinou_likes_path(@kinou), method: :post do %>
-          <i class="far fa-heart"></i><%= @kinou.likes.count %>
-        <% end %>
+      <i class="far fa-heart"></i><%= @kinou.likes.count %>
       <% end %>
-    <% else %>
-    <i class="far fa-heart"></i><%= @kinou.likes.count %>
-    <% end %>
-  <%= link_to "編集する", edit_kinou_path(@kinou.id) %>
+    <%= link_to "編集する", edit_kinou_path(@kinou.id) %>
+  </div>
 </div>
+<p><hr class="sty"><br>
 
-<h2>いいねしたユーザー</h2>
-<% @kinou.liked_users.each do |user| %>
-  <li><%= user.name %></li>
-<% end %>
-
-<div class="comment-wrapper">
-<h2>コメント一覧</h2>
+<div class="box--11">
+  <h3>＜いいねしたユーザー＞</h3>
+  <% @kinou.liked_users.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+</div>
+<p><hr class="sty1"><br>
+<div class="box--11">
+  <div class="comment-wrapper">
+  <h3>＜コメント一覧＞</h3>
   <% @comments.each do |c| %>
     <div>
-      <%= c.user.name unless c.user.blank? %>
-      <br>
+      <%= c.user.name unless c.user.blank? %>：
       <%= c.content %>
     </div>
-      <br>
-  <% end %>
-
-  <% if user_signed_in? %>
-    <%= form_with(model: [@kinou, @comment], local: true) do |f| %>
-      <%= f.text_area :content %>
-      <%= button_tag type: "submit" do %>
-        <i class="far fa-comments"></i> コメントする
-      <% end %>
-    <% end %>
   <% end %>
 </div>
-
-<%= link_to "一覧に戻る", kinous_path %>
+<br>
+<div class="box--11">
+  <h5>下記フォームからコメントを投稿できます</h5>
+    <% if user_signed_in? %>
+      <%= form_with(model: [@kinou, @comment], local: true) do |f| %>
+        <%= f.text_area :content %>
+        <%= button_tag type: "submit" do %>
+          <h5><i class="far fa-comments"></i> 
+          コメントする</h5>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<p><hr class="sty"><br>
+<div class="mainboxx3">
+ <%= link_to "一覧に戻る", kinous_path %>
+</div>
+<p><hr class="sty2"><br>

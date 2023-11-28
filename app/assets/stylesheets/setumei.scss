@@ -2,73 +2,75 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body{
-    height: 8000px;
+    width: 99%;
+    height: 2000px;
+    background-image: url("kabe.jpg");
+    position:absolute
 }
-.a{
+
+.A{
     width: 100%;
 }
-.b{
-    height: 63vh;
+.a{
+    height: 70vh;
 }
+
 .c{
-    height: 63vh;
-}
-.d{
-    height: 26vh;
+    height: 28vh;
 }
 .main-box{
     display: flex;
-}
-.container{
-    margin-left: 90px;
-    margin-top: 100px;
+    
 }
 .container-a{
-    margin-left: 59px;
+    margin-left: 70px;
     margin-top: 100px;
+    
 }
 .container-b{
-    margin-left: 67px;
-    margin-top: 100px;
-}
-.container-c{
-    margin-left: 67px;
+    margin-left: 70px;
     margin-top: 3px;
-    line-height: 4px;
-    font-size: 12px;
-}
-.container-d{
-    margin-left: 67px;
-    margin-top: 30px;
-}
-.line {
-    margin-left: 67px;
-    margin-top: 100px;
-    width: 0.7px;
-    height: 370px;
-    background-color: #000;
-}
-.main-box2{
-    display: flex;
-}
-.container2{
-    margin-left: 90px;
-    margin-top: 3px;
-    line-height: 4px;
-    font-size: 12px;
+    line-height: 8px;
+    font-size: 14px;
 }
 .container-a2{
     margin-left: 59px;
-    margin-top: 3px;
-    line-height: 4px;
-    font-size: 12px;
-} 
-.container-a3{
-    margin-left: 134px;
-    margin-top: 3px;
-    line-height: 4px;
-    font-size: 12px;
+    margin-top: 100px;
 }
+.container-b2{
+    margin-left: 59px;
+    margin-top: 3px;
+    line-height: 8px;
+    font-size: 14px;
+} 
+.container-c{
+    margin-left: 72px;
+    margin-top: 100px;
+}
+.container-d{
+    margin-left: 72px;
+    margin-top: 3px;
+    line-height: 8px;
+    font-size: 14px;
+}
+.container-c2{
+    margin-left: 72px;
+    margin-top: 40px;
+}
+.container-d2{
+    margin-left: 72px;
+    margin-top: 3px;
+    line-height: 8px;
+    font-size: 14px;
+}
+.line {
+    margin-left: 60px;
+    margin-top: 100px;
+    width: 0.7px;
+    height: 410px;
+    background-color: #000;
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -76,4 +78,364 @@ a{
 a:hover{
     text-decoration: underline;
 }
+.font_test {
+    font-weight:  bold;
+    font-size: 17px;
+}
 
+
+
+hr.style{
+    border-top: 1px solid #000;
+    margin-top: 70px;
+    margin-left: 50px;
+    width: 93%;
+}
+
+
+
+.main-box2{
+    display: flex;
+}
+.midasi{
+    font-weight:  bold;
+    font-size: 34px;
+}
+.h{
+    height: 85vh;
+}
+.container-e{
+    margin-left: 70px;
+    margin-top: 220px;
+    line-height: 25px;
+    font-size: 14px;
+}
+.container-f{
+    margin-left: 70px;
+    margin-top: 100px;
+    line-height: 12px;
+    font-size: 14px;
+}
+.container-g{
+    margin-left: 70px;
+    margin-top: 70px;
+    line-height: 12px;
+    font-size: 17px;
+}
+.p_underline{
+    border-bottom:0.5px solid #000; 
+    padding-bottom:15px;
+}
+.container-h{
+    margin-left: 150px;
+    margin-top: 130px;
+}
+
+
+hr.style2{
+    border-top: 1px solid #000;
+    margin-top: 180px;
+    margin-left: 50px;
+    width: 93%;
+}
+
+.main-box3{
+    margin-left: 70px;
+    margin-top: 60px;
+    line-height: 12px;
+    font-size: 14px;
+}
+.midasi2{
+    font-weight:  bold;
+    font-size: 20px;
+}
+
+.main-box4{
+    display: flex;
+}
+.midasi3{
+    font-weight:  bold;
+    font-size: 34px;
+}
+.i{
+    height: 130vh;
+}
+.container-i{
+    margin-left: 70px;
+    margin-top: 50px;
+}
+.container-j{
+    margin-left: 70px;
+    margin-top: 140px;
+    line-height: 25px;
+    font-size: 14px;
+}
+.container-k{
+    margin-left: 70px;
+    margin-top: 80px;
+    line-height: 12px;
+    font-size: 14px;
+}
+.container-l{
+    margin-left: 70px;
+    margin-top: 70px;
+    line-height: 12px;
+    font-size: 17px;
+}
+.p_underline2{
+    border-bottom:0.5px solid #000; 
+    padding-bottom:15px;
+}
+
+
+
+.main-box5{
+    display: flex;
+}
+.midasi4{
+    font-weight:  bold;
+    font-size: 34px;
+}
+.p{
+    height: 125vh;
+}
+.container-m{
+    margin-left: 70px;
+    margin-top: 260px;
+    line-height: 25px;
+    font-size: 14px;
+}
+.container-n{
+    margin-left: 70px;
+    margin-top: 100px;
+    line-height: 12px;
+    font-size: 14px;
+}
+.container-o{
+    margin-left: 70px;
+    margin-top: 100px;
+    line-height: 12px;
+    font-size: 17px;
+}
+.p_underline3{
+    border-bottom:0.5px solid #000; 
+    padding-bottom:15px;
+}
+.container-p{
+    margin-left: 150px;
+    margin-top: 170px;
+}
+hr.style3{
+    border-top: 1px solid #000;
+    margin-top: 180px;
+    margin-left: 50px;
+    width: 93%;
+}
+
+
+
+body2{
+    height: 7000px;
+}
+.main-box6{
+    display: flex;
+}
+.midasi5{
+    font-weight:  bold;
+    font-size: 34px;
+}
+.s{
+    height: 80vh;
+}
+.container-q{
+    margin-left: 81px;
+    margin-top: 40px;
+    font-size: 58px;
+}
+.container-r{
+    margin-left: 81px;
+    margin-top: 180px;
+    line-height: 24px;
+    font-size: 15px;
+}
+.container-s{
+    margin-left: 110px;
+    margin-top: 0px;
+}
+.container-t{
+    margin-left: 500px;
+    margin-top: 14px;
+    font-size: 13px;
+}
+.main-box7{
+    display: flex;
+}
+.midasi6{
+    font-weight:  bold;
+    font-size: 40px;
+}
+.u{
+    height: 103vh;
+}
+.container-u{
+    margin-left: 10px;
+    margin-top: 150px;
+}
+.container-v{
+    margin-left: 190px;
+    margin-top: 210px;
+    font-size: 48px;
+}
+.container-w{
+    margin-left: 190px;
+    margin-top: 25px;
+    line-height: 16px;
+    font-size: 14px;
+}
+.main-box8{
+    display: flex;
+}
+.z{
+    height: 60vh;
+}
+.container-z{
+    margin-left: 120px;
+    margin-top: 160px;
+}
+.container-x{
+    margin-left: 81px;
+    margin-top: 190px;
+    font-size: 14px;
+}
+.container-y{
+    margin-left: 81px;
+    margin-top: 25px;
+    line-height: 16px;
+    font-size: 14px;
+}
+.main-box9{
+    display: flex;
+}
+.aa{
+    height: 85vh;
+}
+.container-aa{
+    margin-left: 81px;
+    margin-top: 160px;
+}
+.container-bb{
+    margin-left: 170px;
+    margin-top: 190px;
+    font-size: 14px;
+}
+.container-cc{
+    margin-left: 170px;
+    margin-top: 25px;
+    line-height: 16px;
+    font-size: 14px;
+}
+.main-box10{
+    display: flex;
+}
+.ff{
+    height: 60vh;
+}
+.container-ff{
+    margin-left: 120px;
+    margin-top: 160px;
+}
+.container-dd{
+    margin-left: 81px;
+    margin-top: 190px;
+    font-size: 14px;
+}
+.container-ee{
+    margin-left: 81px;
+    margin-top: 25px;
+    line-height: 16px;
+    font-size: 14px;
+}
+.main-box11{
+    display: flex;
+}
+.gg{
+    height: 60vh;
+}
+.container-gg{
+    margin-left: 81px;
+    margin-top: 160px;
+}
+.container-hh{
+    margin-left: 170px;
+    margin-top: 190px;
+    font-size: 14px;
+}
+.container-ii{
+    margin-left: 170px;
+    margin-top: 25px;
+    line-height: 16px;
+    font-size: 14px;
+}
+.main-box12{
+    display: flex;
+}
+.ll{
+    height: 50vh;
+}
+.container-ll{
+    margin-left: 170px;
+    margin-top: 160px;
+}
+.container-jj{
+    margin-left: 81px;
+    margin-top: 190px;
+    font-size: 14px;
+}
+.container-kk{
+    margin-left: 81px;
+    margin-top: 25px;
+    line-height: 16px;
+    font-size: 14px;
+}
+.main-box13{
+    display: flex;
+}
+.mm{
+    height: 55vh;
+}
+.container-mm{
+    margin-left: 81px;
+    margin-top: 160px;
+}
+.container-nn{
+    margin-left: 170px;
+    margin-top: 190px;
+    font-size: 14px;
+}
+.container-oo{
+    margin-left: 170px;
+    margin-top: 25px;
+    line-height: 16px;
+    font-size: 14px;
+}
+.main-box14{
+    display: flex;
+}
+.rr{
+    height: 50vh;
+}
+.container-rr{
+    margin-left: 120px;
+    margin-top: 160px;
+}
+.container-pp{
+    margin-left: 81px;
+    margin-top: 160px;
+    font-size: 14px;
+}
+.container-qq{
+    margin-left: 81px;
+    margin-top: 25px;
+    line-height: 16px;
+    font-size: 14px;
+}

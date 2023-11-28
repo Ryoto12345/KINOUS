@@ -1,69 +1,94 @@
+<h1>機能性表示食品紹介</h1>
+  <div class="box">
+      <h2>編集ぺージ</h2>
+  </div>
+  <div class="box0">
+    <p>編集したい情報を登録してください<br>
+  </div>
+  <p><hr class="sty"><br>
+
 <%= form_for @kinou do |f| %>
-  <div class="field">
-    <%= f.label :name  %>
-    <%= f.text_field :name, :size => 30 %>
+  <div class="box-11">
+    <div class="field">
+      <h3>商品情報</h3>
+      <h4><%= f.label :商品名 %>(ex.ヤクルト1000)</h4>
+      <%= f.text_field :name, :size => 30 %>
+    </div>
   </div>
-
-  <div class="field">
-   <%= f.label :genre  %>
-   <%= f.text_field :genre, :size => 30 %>
+  <div class="box-11">
+    <div class="field">
+    <h4><%= f.label :機能性成分名  %>(ex.乳酸菌)</h4>
+    <%= f.text_field :genre, :size => 30 %>
+    </div>
   </div>
-
-  <div class="field">
-   <%= f.label :about  %>
-   <%= f.text_area :about, :size => "50x10" %>
+  <div class="box-11">
+    <div class="field">
+    <h4><%= f.label :商品の説明  %></h4>
+    <%= f.text_area :about, :size => "50x10" %>
+    </div>
   </div>
-
-  
-  
-  <div class="field">
-   <%= f.label :age  %>
-   <%= f.text_field :age, :size => 30 %>
+  <div class="box-11">
+    <div class="field">
+      <%= f.label :商品の写真 %>
+      <%= f.file_field :image %>
+    </div>
   </div>
-
-  <div class="field">
-   <%= f.label :sex  %>
-   <%= f.text_field :sex, :size => 30 %>
+  <div class="box-11">
+    <h4>タグの選択</h4>
+    <div class='form-group'>
+    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+      <div class='form-check'>
+          <%= tag.label class: 'form-check-label' do %>
+              <%= tag.check_box class: 'form-check-input' %>
+              <%= tag.text %>
+          <% end %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-   <%= f.label :weight  %>
-   <%= f.text_field :weight, :size => 30 %>
   </div>
-
-  <div class="field">
-   <%= f.label :height  %>
-   <%= f.text_field :height, :size => 30 %>
+  <br><hr class="sty1"><br>
+  <div class="box-11"> 
+    <div class="field">
+    <h3>投稿者情報</h3>
+    <h4><%= f.label :年齢  %></h4>
+    <%= f.text_field :age, :size => 30 %>
+    </div>
   </div>
-
-  <div class="field">
-   <%= f.label :frequency  %>
-   <%= f.text_field :frequency, :size => 30 %>
+  <div class="box-11"> 
+    <div class="field">
+    <h4><%= f.label :性別  %></h4>
+    <%= f.text_field :sex, :size => 30 %>
+    </div>
   </div>
-
-  <div class="field">
-   <%= f.label :period  %>
-   <%= f.text_field :period, :size => 30 %>
+  <div class="box-11">
+    <div class="field">
+    <h4><%= f.label :体重 %></h4>
+    <%= f.text_field :weight, :size => 30 %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+  <div class="box-11">
+    <div class="field">
+    <h4><%= f.label :身長 %></h4>
+    <%= f.text_field :height, :size => 30 %>
+    </div>
   </div>
-
-
-
-  <div class='form-group'>
-  <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-     <div class='form-check'>
-         <%= tag.label class: 'form-check-label' do %>
-             <%= tag.check_box class: 'form-check-input' %>
-             <%= tag.text %>
-         <% end %>
-     </div>
-  <% end %>
- </div>
-
-  <%= f.submit "編集する" %>
+  <div class="box-11">
+    <div class="field">
+    <h4><%= f.label :摂取頻度 %>(ex.１日２本)</h4>
+    <%= f.text_field :frequency, :size => 30 %>
+    </div>
+  </div>
+  <div class="box-11">
+    <div class="field">
+    <h4><%= f.label :摂取期間  %>(ex.8ケ月)</h4>
+    <%= f.text_field :period, :size => 30 %>
+    </div>
+  </div>
+  <br><hr class="sty"><br>
+    <div class="box-2">
+    <%= f.submit "編集する" %>　　　
+    <%= link_to "一覧に戻る", kinous_path %>
+  </div>
 <% end %>
-<%= link_to "一覧に戻る", kinous_path %>
+
+<br><hr class="sty2"><br>

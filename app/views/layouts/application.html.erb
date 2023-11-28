@@ -27,7 +27,31 @@
     <main>
       <%= yield %>
     </main>
-
+    <footer>
+      <div class="aaa">
+      <div class="footer-list">
+        KINOUS
+        </div>
+      <div class="contents">
+        <div class="bbb">
+          <h5>HOME</h5>
+          <h3><span class="p_underline"><%= link_to "トップページ　　　　　　　　　　　　　　　　　　　　　　　　　　　›", root_path %>
+          </h3>
+        </div>
+        <div class="bbb">
+          <h5>ABOUT</h5>
+          <h3><span class="p_underline"><%= link_to "サイトの想い　　　　　　　　　　　　　　　　　　　　　　　　　　　›", setumei_about_path %></h3>
+        </div>
+        <div class="bbb">
+          <h5>MAIN CONTENTS</h5>
+          <h3>
+          <%= link_to "健康機能を担う成分　　　　　　　　　　　　　　　　　　　　　　　　›", setumei_seibun_path %><br>
+          <%= link_to "健康効果一覧　　　　　　　　　　　　　　　　　　　　　　　　　　　›", setumei_kouka_path %><br>
+          <span class="p_underline"><%= link_to "機能性成分を含む製品レビュー　　　　　　　　　　　　　　　　　　　›", kinous_path %></h3>
+        </div>
+        <br><hr class="style1"><br>
+      </div>
+    </footer>
   
 
   </body>
