@@ -1,6 +1,6 @@
 databases:
   - name: KINOUS_DB
-    databaseName: kinous_db_lfqe
+    databaseName: kinous_db_fvbv
     user: KINOUS
     region: singapore
 
