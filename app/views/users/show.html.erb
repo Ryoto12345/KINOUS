@@ -1,41 +1,109 @@
-<h1>マイページ</h1>
-<p>名前 : <%= @user.name %></p>
-<p>メールアドレス : <%= @user.email %></p>
-<p>プロフィール : <%= @user.profile %></p>
-
-<% if current_user.id == @user.id %>
-  <%= link_to "編集する", edit_user_registration_path %>
-<% end %>
-
-<h2>ユーザーの投稿一覧</h2>
+<div class="u6">
+  <h1>マイページ</h1>
+</div>
+<div class="u5">
+  <p>名前 : <%= @user.name %></p>
+  <p>メールアドレス : <%= @user.email %></p>
+  <p>プロフィール : <%= @user.profile %></p>
+</div>
+<div class="u8">
+  <% if current_user.id == @user.id %>
+    <%= link_to "編集する", edit_user_registration_path %>
+  <% end %>
+</div>
+<br><hr class="style5"><br>
+<div class="u6">
+  <h2>あなたの投稿一覧</h2>
+</div>
 <% @user.kinous.each do |t| %>
-  <%= t.name %>
-  <%= t.genre %>
-  <%= t.about %>
-  <%= image_tag t.image_url, size: "300x250" if t.image? %>
-  <%= t.age %>
-  <%= t.sex %>
-  <%= t.weight %>
-  <%= t.height %>
-  <%= t.frequency %>
-  <%= t.period %>
+  <div class="kinou">
+    <div class="mainboxxx">
+      <div class="mainboxx">
+        
+        <div class="boxx">
+          <br>
+          <h4><span class="p_underline4">　商品情報　</h4>
+          <p><span class="p_u">商品名：</span><%= t.name %><br>
+          <p><span class="p_u">機能性成分名：</span><%= t.genre %><br>
+          <p><%= image_tag t.image_url, size: "300x250" if t.image? %><br>
+          <% t.tags.each do |tag| %>
+            <p><span class="p_u">健康効果タグ：</span><%= tag.name %><br>
+          <% end %> 
+        </div>
+        
+        
+        <div class="boxxx">
+          <br>
+          <br>
+          <h4><span class="p_underline4">　投稿者情報　</h4>
+          <p><span class="p_u">投稿者名：</span><%= t.user.name %><br>
+          <p><span class="p_u">年齢：</span><%= t.age %>歳<br>
+          <p><span class="p_u">性別：</span><%= t.sex %><br>
+          <p><span class="p_u">体重：</span><%= t.weight %>kg<br>
+          <p><span class="p_u">身長：</span><%= t.height %>cm<br>
+          <p><span class="p_u">商品の摂取頻度：</span><%= t.frequency %><br>
+          <p><span class="p_u">商品の摂取期間：</span><%= t.period %><br>
+        </div>
+      </div>
+    </div>
+      <div class="main2">
+        <div class="mainboxx2">
+          <br>
+          <p><span class="p_u">商品の説明：</span><%= t.about %><br>
+          <br>
+        </div>
+      </div>
+  </div>
+  
 <% end %>
-
+<br><hr class="style5"><br>
 <!-- 以下はいいね機能を実装している場合-->
-<h2>ユーザーがいいねした投稿一覧</h2>
+<div class="u7">
+  <h2>あなたがいいねした投稿一覧</h2>
+</div>
 <% @user.liked_kinous.each do |t| %>
-  <%= t.user.name %>
-  <%= t.name %>
-  <%= t.genre %>
-  <%= t.about %>
-  <%= image_tag t.image_url, size: "300x250" if t.image? %>
-  <%= t.age %>
-  <%= t.sex %>
-  <%= t.weight %>
-  <%= t.height %>
-  <%= t.frequency %>
-  <%= t.period %>
+  <div class="kinou">
+    <div class="mainboxxx">
+      <div class="mainboxx">
+        
+        <div class="boxx">
+          <br>
+          <h4><span class="p_underline4">　商品情報　</h4>
+          <p><span class="p_u">商品名：</span><%= t.name %><br>
+          <p><span class="p_u">機能性成分名：</span><%= t.genre %><br>
+          <p><%= image_tag t.image_url, size: "300x250" if t.image? %><br>
+          <% t.tags.each do |tag| %>
+            <p><span class="p_u">健康効果タグ：</span><%= tag.name %><br>
+          <% end %> 
+        </div>
+        
+        
+        <div class="boxxx">
+          <br>
+          <br>
+          <h4><span class="p_underline4">　投稿者情報　</h4>
+          <p><span class="p_u">投稿者名：</span><%= t.user.name %><br>
+          <p><span class="p_u">年齢：</span><%= t.age %>歳<br>
+          <p><span class="p_u">性別：</span><%= t.sex %><br>
+          <p><span class="p_u">体重：</span><%= t.weight %>kg<br>
+          <p><span class="p_u">身長：</span><%= t.height %>cm<br>
+          <p><span class="p_u">商品の摂取頻度：</span><%= t.frequency %><br>
+          <p><span class="p_u">商品の摂取期間：</span><%= t.period %><br>
+        </div>
+      </div>
+    </div>
+      <div class="main2">
+        <div class="mainboxx2">
+          <br>
+          <p><span class="p_u">商品の説明：</span><%= t.about %><br>
+          <br>
+        </div>
+      </div>
+  </div>
 <% end %>
 <!-- ここまで-->
-
-<%= link_to "一覧に戻る", kinous_path %>
+<br><hr class="style8"><br>
+<div class="u4">
+  <%= link_to "一覧に戻る", kinous_path %>
+</div>
+<br>

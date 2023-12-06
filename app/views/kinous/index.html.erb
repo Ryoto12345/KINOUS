@@ -20,14 +20,19 @@
     <br>
     <br>
     <br>
-    <h3>ユーザーの投稿を検索</h3>
-    <h6>・検索したい言葉を入力してください</h6>
+    <br>
+    <br>
+    <br>
+    <h2>ユーザーの投稿を検索</h2>
+    <br>
+    <h5>・検索したい言葉を入力してください</h5>
     <%= form_tag({controller:"kinous",action:"index"}, method: :get) do %>
       <%= text_field_tag :search %>
       <%= submit_tag '検索する'  %>
     <% end %>
-    <p>　<br>
-    <h6>・検索したいタグを選択してください</h6>
+    <br><hr class="styleind"><br>
+    <br>
+    <h5>・検索したいタグを選択してください</h5>
     <%= form_tag({controller:"kinous",action:"index"}, method: :get) do %>
       <% Tag.all.each do |t| %>
           <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
@@ -35,11 +40,7 @@
       <%= submit_tag '検索' %>
     <% end %>
     <p>　<br>
-    <h6>・追加したいタグを入力してください</h6>
-    <%= form_tag({controller:"kinous",action:"index"}, method: :get) do %>
-      <%= text_field_tag :tag %>
-      <%= submit_tag 'タグを追加' %>
-    <% end %>
+    
   </div>
   <br>
   <br>
@@ -48,7 +49,7 @@
 
 
 <div class="box000">
-  <h3>ユーザーの投稿一覧</h3>
+  <h2>ユーザーの投稿一覧</h2>
 </div>
 
 <div class="kinous-container">
@@ -121,6 +122,8 @@
     <p><hr class="sty"><br>
     <div class="box-00">
         <%= button_to "削除する", kinou_path(t.id), method: :delete %>
+        <br>
+        <br>
         <% end %>
         </div>
         <% end %>

@@ -1,27 +1,46 @@
-<h2>ログイン</h2>
-<p>※登録したメールアドレスとパスワードを入力してください。</p>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <h2>メール </h2><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="main-boxu1">
+  <div class="container-u1">
+    KINOUS
   </div>
-
-  <div class="field">
-    <h2>パスワード </h2><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="container-u2">
+    <%= link_to "ホーム　・　機能性成分を含む製品レビュー", root_path %>
   </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <h2>私を覚える</h2>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+</div>
+<div class="main-boxu2">
+  <div class="container-u3">
+   Login
   </div>
-<% end %>
+  <div class="container-u5">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="u1">
+        <p><span class="p_underlineu1">　　登録したメールアドレスとパスワードを入力してください。　　<br>
+      </div>
+      <div class="u2">
+        <div class="field">
+          メール <br>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-<%= render "users/shared/links" %>
+        <div class="field">
+          パスワード <br>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div> 
+        <br>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+          <%= f.check_box :remember_me %>
+          入力内容を保存する
+          </div>
+        <% end -%>
+        <div class="actions">
+          <br>
+          <%= f.submit "LOGIN" %>
+        </div>
+      </div>
+    <% end %>
+  </div> 
+</div>
+<div class="u3">
+  <%= render "users/shared/links" %>
+</div>
