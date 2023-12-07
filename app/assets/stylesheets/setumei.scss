@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body{
     width: 99%;
-    height: 2000px;
+    height: 500px;
     background-image: url("kabe.jpg");
     position:absolute
 }
@@ -426,12 +426,12 @@ body2{
     font-size: 14px;
 }
 .container-kdd{
-    margin-left: 190px;
+    margin-left: 140px;
     margin-top: 150px;
     font-size: 14px;
 }
 .container-kee{
-    margin-left: 190px;
+    margin-left: 140px;
     margin-top: 25px;
     line-height: 16px;
     font-size: 14px;
@@ -500,12 +500,12 @@ body2{
     font-size: 14px;
 }
 .container-kjj{
-    margin-left: 190px;
+    margin-left: 140px;
     margin-top: 220px;
     font-size: 14px;
 }
 .container-kkk{
-    margin-left: 190px;
+    margin-left: 140px;
     margin-top: 40px;
     line-height: 16px;
     font-size: 14px;
@@ -638,4 +638,7 @@ body2{
     height: auto;
     background-image: url("usuki.jpg");
     position:relative
+}
+.midasik{
+    text-align: center;
 }
